@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+    <title>Spring Boot: MVC PostgreSQL Example</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" >
+    <div class="container">
+        <div class="navbar-header" style="height: 110px">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a target="_blank" class="navbar-brand" href="http://www.samsunspor.org.tr/">
+                <img th:src="@{/img/logo.png}" class="img-rounded" style="width: 85px;height: 100px"/>
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="starter-template">
+        <h1>Spring Boot: MVC PostgreSQL Example</h1>
+        
+		<table class="table table-sm table-striped">
+		   <th:block th:each="customer : ${customerlist}">
+		      <tr>
+		         <td th:text="${customer.firstName}">...</td>
+		         <td th:text="${customer.lastName}">...</td>
+		      </tr>
+		   </th:block>
+		</table>
+        
+    </div>
+</div>
+
+<!-- include javascript -->
+<script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js/"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
